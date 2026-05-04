@@ -1,32 +1,31 @@
 
 
-//Creamos una variable para poder utilizarla
-var menu = 2;
+//Creamos una variable en este caso sera numerica
+let menu = 1;
 
-
-//Defginimos el Switch con una variable numerixa
-switch (menu) {
-
+//Definimos un switch basico, operado por nuemros
+//Acá se intregan las opciones en los cases
+//Tarea realizar hasta la opción 3
+switch(menu){
     case 1:
         imprime = "Opción 1";
         break;
     case 2:
         imprime = "Opción 2";
         break;
-    case 1:
+    case 3:
         imprime = "Opción 3";
         break;
     default:
-        imprime = "No ha seleccionado ninguna opción";
-        break;
-
+        imprime= "Opcion No definida";
 }
-
 console.log(imprime);
 
 
-console.log("-------------------------------------");
-
+console.log("----------------------");
+console.log("----------------------");
+console.log("----------------------");
+console.log("----------------------");
 
 //Definimos una variable
 var dia = "lunes";
@@ -34,19 +33,36 @@ var dia = "lunes";
 //Defginimos el Switch con una variable de texto
 switch (dia) {
     case "lunes":
-    case "martes":
-    case "miercoles":
-    case "jueves":
-    case "viernes":
-        semana_fin = "Día de semana";
+        imprime2 = ("Este es el dia" + dia);
         break;
     case "sabado":
+        imprime2 = ("Fin de semana" + dia);
     case "domingo":
-        semana_fin = "Fin de semana";
+        imprime2 = ("Fin de semana" + dia);
         break;
     default:
-        semana_fin = "Día no válido";
+        imprime2 = "Día no válido";
 }
+
+console.log(imprime2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+console.log("-------------------------------------");
+
+
 
 console.log(semana_fin);
 
@@ -54,17 +70,11 @@ console.log("-------------------------------------");
 
 //Definimos una variable
 var edad = 13;
-
-//Definimos las variables con condiciones
 var esNino = edad < 13;
 var esAdolescente = edad >= 13 && edad < 18;
 var esAdulto = edad >= 18 && edad < 65;
 var esAdultoMayor = edad >= 65;
-
-//Preguntamos que tipo de valor estaremos trabajando
 console.log(typeof (esNino));
-
-//Realizamos el switch con valor != a numerico
 switch (true) {
     case esNino:
         parametros = "Eres un niño";
@@ -82,8 +92,4 @@ switch (true) {
         parametros = "Edad no válida";
         break;
 }
-
 console.log(parametros);
-
-
-console.log("-------------------------------------");
