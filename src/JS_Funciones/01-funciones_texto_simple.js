@@ -34,9 +34,11 @@ console.log("----------------------------------------");
 
 //Funcion sin parametro
 function mostrarFechaActual() {
-    //Ojo Estamos usando una constante, es decir no cambia, pero,... la hora cambia a cada segundo
+    //Ojo Estamos usando una constante, es decir no cambia, 
+    // pero,... la hora cambia a cada segundo
     const ahora = new Date();
     console.log("Hoy es: " + ahora.toLocaleDateString());
+    console.log("Hoy es: " + ahora);
 }
 
 // Cada vez que la llames, hará exactamente lo mismo
@@ -44,6 +46,8 @@ mostrarFechaActual();
 
 
 console.log("----------------------------------------");
+
+
 
 
 //Funcion con if, Omitimos la creacion de variables, ya que las parseamos abajo
@@ -57,6 +61,9 @@ function verificarAcceso(nombre, edad) {
 
 verificarAcceso("Ezla Patito", 25);
 verificarAcceso("Elviz Tek", 16);
+
+
+
 
 //Tarea, crear la misma funcion de arriba pero definiendo las variables
 console.log("¸¸¸¸¸¸¸¸¸¸");
@@ -84,3 +91,13 @@ function calcularImpuesto(monto) {
 
 // Resultado que esperamos 190
 console.log("Resultado: ", calcularImpuesto(1000));
+
+
+function multiRestDiv(mrd){
+    let numeroAMultiplicar = mrd * 10;
+    let numeroResta = numeroAMultiplicar - mrd;
+    let numeroDiv = numeroResta / mrd;
+    return numeroDiv;
+}
+
+console.log("Resultado: ", multiRestDiv(10));
