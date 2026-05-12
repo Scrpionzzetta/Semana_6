@@ -15,7 +15,7 @@ obtenerMensaje((m) => alert(m));
 
 
 
-
+/*
 
 
 
@@ -34,6 +34,7 @@ console.log("Resta: " + resta); // 5
 console.log("Multi: " + multi); // 50
 
 
+*/
 
 
 
@@ -43,8 +44,7 @@ console.log("Multi: " + multi); // 50
 
 
 
-
-
+/*
 
 
 // Definición: "procesarEntrada" es la función principal
@@ -61,14 +61,14 @@ procesarEntrada((n) => {
 });
 
 
+*/
 
 
 
 
+/*
 
-
-
-const numeros = [1, 2, 3, 4, 5];
+const nums = [1, 2, 3, 4, 5];
 
 // Función principal que recorre el array
 function operarConNumeros(lista, accion) {
@@ -78,25 +78,25 @@ function operarConNumeros(lista, accion) {
 }
 
 // Caso A: Queremos imprimir el doble
-operarConNumeros(numeros, (num) => {
+operarConNumeros(nums, (num) => {
     console.log("El doble de " + num + " es " + (num * 2));
 });
 
 console.log("---");
 
 // Caso B: Queremos saber si son pares
-operarConNumeros(numeros, (num) => {
+operarConNumeros(nums, (num) => {
     if (num % 2 === 0) {
         console.log(num + " es par");
     }
-});
+});*/
 
 
 
 
+/*
 
-
-
+console.log("--------------------------------------------------");
 
 function formatearNombre(nombre, apellido, callback) {
     return callback(nombre, apellido);
@@ -113,14 +113,16 @@ const diploma = formatearNombre("Daniel", "Scarlazzetta", (n, a) => {
 });
 
 console.log(listaAsistencia); // SCARLAZZETTA, Daniel
-console.log(diploma);         // Don/Doña Daniel Scarlazzetta
+console.log(diploma);         // Don Daniel Scarlazzetta
 
 
 
 
+*/
 
 
 
+/*
 
 
 function procesarEntrada(callback) {
@@ -134,16 +136,16 @@ function procesarEntrada(callback) {
 // Aquí tú decides qué pasa al final del proceso
 procesarEntrada((n) => {
     console.log("3. ¡Hola " + n + "! Los datos se guardaron con éxito.");
-});x 
+});
+
+
+*/
 
 
 
 
 
-
-
-
-
+/*
 
 
 //Callback que valida información
@@ -162,13 +164,13 @@ validarDato(15, (n) => n > 10); // válido
 validarDato(5, (n) => n > 10); // inválido 
 
 
+*/
 
 
 
 
 
-
-
+/*
 
 //Callback que transforma texto
 
@@ -186,12 +188,12 @@ const exclamacion = transformarTexto("hola mundo", (t) => "¡¡" + t + "!!");
 console.log(mayus);        // HOLA MUNDO
 console.log(exclamacion);  // ¡¡hola mundo!!
 
+*/
 
 
 
 
-
-
+/*
 //Callback ejecutado varias veces (contador)
 
 // Función principal: repite una acción varias veces
@@ -207,11 +209,13 @@ console.log("Ejecución número: " + num);
 }); 
 
 
+*/
 
 
 
 
-// EJEMPLO 4: Simulación simple de proceso (más "real")
+/*
+// Simulación simple de proceso (más "real")
 
 // Función principal: simula un proceso de compra
 function procesarCompra(producto, callback) {
@@ -234,15 +238,15 @@ console.log("Generando boleta para: " + p);
 }); 
 
 
+*/
 
 
 
 
 
 
-
-
-// EJEMPLO AVANZADO: Procesador con múltiples callbacks (filtrar + transformar + acción final)
+/*
+// Procesador con múltiples callbacks (filtrar + transformar + acción final)
 
 // Función principal: recibe una lista y 3 callbacks
 function procesarDatos(lista, filtro, transformador, accionFinal) {
@@ -289,4 +293,6 @@ for (let r of resultado) {
 console.log(r);
 }
 }
-); 
+)
+
+*/; 
