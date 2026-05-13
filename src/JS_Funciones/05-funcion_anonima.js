@@ -1,8 +1,11 @@
+//Funcion anonima Simple
 (function() {
     console.log("Este código se ejecuta solo y no contamina el scope global.");
 })();
 
-//CRear una funcion anonima que sume 3 numeros
+
+
+//Crear una funcion anonima que sume 3 numeros
 //eje1
 (function() {
     console.log(1+2+3);

@@ -13,7 +13,6 @@ saludar();
 
 
 
-
 console.log("----------------------------------------"); 
 
 
@@ -22,14 +21,14 @@ console.log("----------------------------------------");
 function saludar2(a, b) {
     console.log("Hola " + a + "! " + b);
 }
+
 let ejemploA = "Sepúlveda";
 // Llamamos a la funcion
 saludar2(ejemploA, "lala pipo");
-
+    
 console.log("----------------------------------------");
-
-
-
+    
+    
 
 
 //Funcion sin parametro

@@ -15,7 +15,6 @@ obtenerMensaje((m) => alert(m));
 
 
 
-/*
 
 
 
@@ -34,7 +33,6 @@ console.log("Resta: " + resta); // 5
 console.log("Multi: " + multi); // 50
 
 
-*/
 
 
 
@@ -44,7 +42,7 @@ console.log("Multi: " + multi); // 50
 
 
 
-/*
+
 
 
 // Definición: "procesarEntrada" es la función principal
@@ -61,12 +59,8 @@ procesarEntrada((n) => {
 });
 
 
-*/
 
 
-
-
-/*
 
 const nums = [1, 2, 3, 4, 5];
 
@@ -89,12 +83,12 @@ operarConNumeros(nums, (num) => {
     if (num % 2 === 0) {
         console.log(num + " es par");
     }
-});*/
+});
 
 
 
 
-/*
+
 
 console.log("--------------------------------------------------");
 
@@ -103,9 +97,10 @@ function formatearNombre(nombre, apellido, callback) {
 }
 
 // Ejemplo 1: Formato para una lista de asistencia (Apellido, Nombre)
-const listaAsistencia = formatearNombre("Daniel", "Scarlazzetta", (n, a) => {
-    return a.toUpperCase() + ", " + n;
+const listaAsistencia = formatearNombre("Daniel", "Scarlazzetta",(n, a) => {
+    return a.toUpperCase() + ", "+ n;
 });
+
 
 // Ejemplo 2: Formato para un diploma (Nombre Apellido)
 const diploma = formatearNombre("Daniel", "Scarlazzetta", (n, a) => {
@@ -117,12 +112,6 @@ console.log(diploma);         // Don Daniel Scarlazzetta
 
 
 
-
-*/
-
-
-
-/*
 
 
 function procesarEntrada(callback) {
@@ -139,38 +128,41 @@ procesarEntrada((n) => {
 });
 
 
-*/
 
 
 
 
 
-/*
+
 
 
 //Callback que valida información
 
 // Función principal: recibe un dato y una función que decide si es válido
 function validarDato(dato, callback) {
-if (callback(dato)) {
-console.log("Dato válido: " + dato);
-} else {
-console.log("Dato inválido: " + dato);
+    if (callback(dato)) {
+        console.log("Dato válido: " + dato);
+    } else {
+        console.log("Dato inválido: " + dato);
+    }
 }
-}
+//
+validarDato(5, (n) => n > 10); // inválido 
+
+
 
 //valida si el número es mayor a 10
 validarDato(15, (n) => n > 10); // válido
 validarDato(5, (n) => n > 10); // inválido 
 
 
-*/
 
 
 
 
 
-/*
+
+
 
 //Callback que transforma texto
 
@@ -184,115 +176,112 @@ const mayus = transformarTexto("hola mundo", (t) => t.toUpperCase());
 
 // Callback 2: agregar signos
 const exclamacion = transformarTexto("hola mundo", (t) => "¡¡" + t + "!!");
+const exclamacionMayus = transformarTexto("hola mundo", (t) => "¡¡" + t.toUpperCase() + "!!");
+
 
 console.log(mayus);        // HOLA MUNDO
 console.log(exclamacion);  // ¡¡hola mundo!!
-
-*/
-
+console.log(exclamacionMayus);  // ¡¡HOLA MUNDO!!
 
 
 
-/*
+
+
+
+
+
 //Callback ejecutado varias veces (contador)
 
 // Función principal: repite una acción varias veces
 function repetirAccion(veces, callback) {
-for (let i = 1; i <= veces; i++) {
-callback(i);
-}
+        for (let i = 1; i <= veces; i++) {
+        callback(i);
+    }
 }
 
 // Callback: mostrar número de repetición
 repetirAccion(3, (num) => {
-console.log("Ejecución número: " + num);
+    console.log("Ejecución número: " + num);
 }); 
 
 
-*/
 
 
 
 
-/*
+
+
 // Simulación simple de proceso (más "real")
 
 // Función principal: simula un proceso de compra
 function procesarCompra(producto, callback) {
-console.log("Procesando compra de: " + producto);
-
-// Aquí se ejecuta lo que queremos hacer después
-callback(producto);
+    console.log("Procesando compra de: " + producto);
+    // Aquí se ejecuta lo que queremos hacer después
+    callback(producto);
 }
 
 // Callback 1: mostrar mensaje de éxito
 procesarCompra("Notebook", (p) => {
-console.log("Compra realizada con éxito: " + p);
+    console.log("Compra realizada con éxito: " + p);
 });
 
 console.log("---");
 
 // Callback 2: generar boleta
 procesarCompra("Notebook", (p) => {
-console.log("Generando boleta para: " + p);
+    console.log("Generando boleta para: " + p);
 }); 
 
 
-*/
 
 
 
 
-
-
-/*
 // Procesador con múltiples callbacks (filtrar + transformar + acción final)
 
 // Función principal: recibe una lista y 3 callbacks
 function procesarDatos(lista, filtro, transformador, accionFinal) {
-let resultado = [];
+    let resultado = [];
 
-for (let elemento of lista) {
+    for (let elemento of lista) {
+        // 1. Primero decidimos si el elemento pasa el filtro
+        if (filtro(elemento)) {
+            // 2. Luego transformamos el elemento
+            let transformado = transformador(elemento);
+            // 3. Guardamos el resultado
+            resultado.push(transformado);
+        }
+    }
 
-// 1. Primero decidimos si el elemento pasa el filtro
-if (filtro(elemento)) {
+    // 4. Finalmente ejecutamos una acción con todos los resultados
+    accionFinal(resultado);
+};
 
-// 2. Luego transformamos el elemento
-let transformado = transformador(elemento);
 
-// 3. Guardamos el resultado
-resultado.push(transformado);
-}
-}
 
-// 4. Finalmente ejecutamos una acción con todos los resultados
-accionFinal(resultado);
-}
 
 
 // Lista de números
 const numeros = [1, 2, 3, 4, 5, 6];
-
-
 // EJECUCIÓN: Aquí está lo complejo 
 // Estamos pasando 3 callbacks distintos al mismo tiempo
+    procesarDatos(
+        numeros,
+        // Callback 1: FILTRO (solo números pares)
+        (n) => n % 2 === 0,
 
-procesarDatos(
-numeros,
+        // Callback 2: TRANSFORMADOR (multiplicar por 10)
+        (n) => n * 10,
 
-// Callback 1: FILTRO (solo números pares)
-(n) => n % 2 === 0,
+        // Callback 3: ACCIÓN FINAL (mostrar resultados)
+        (resultado) => {
+            console.log("Resultado final:");
+            for (let r of resultado) {
+                console.log(r);
+            }
+        }
+    )
 
-// Callback 2: TRANSFORMADOR (multiplicar por 10)
-(n) => n * 10,
+    ;
 
-// Callback 3: ACCIÓN FINAL (mostrar resultados)
-(resultado) => {
-console.log("Resultado final:");
-for (let r of resultado) {
-console.log(r);
-}
-}
-)
 
-*/; 
